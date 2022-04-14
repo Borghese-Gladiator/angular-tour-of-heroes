@@ -1,6 +1,22 @@
 # AngularTourOfHeroes
 View tutorial here: [https://angular.io/tutorial/](https://angular.io/tutorial/)
 
+#### Overall Angular Workflow
+- App Module imports every component
+- HTML component file can call imported components using their CSS element selector
+- TypeScript component file calls service functions for data and lifecycle methods are here
+- Service retrieves data asynchronously using Observer library RxJS - updates are done through publish/subscribe design pattern
+
+## Notes
+- Angular CLI to generate component, services
+- Generate heroes component and use in app.component.html
+- Generate hero-detail component and use in heroes.component.html
+- Annotate class with decorator that specifies Angular metadata - eg: @Component
+- Angular event binding syntax - ```<button type="button" (click)="onSelect(hero)"``` and ```<input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">```
+- Angular conditional rendering - ```<div *ngIf="selectedHero">```
+- Annotate data member with decorator - eg: @Input - The input property is bound to a DOM property in the template. During change detection, Angular automatically updates the data property with the DOM property's value.
+- Service handles retrieval of data and passes to component
+
 ## Angular CLI README
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
