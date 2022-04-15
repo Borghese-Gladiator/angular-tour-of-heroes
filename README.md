@@ -2,20 +2,20 @@
 View tutorial here: [https://angular.io/tutorial/](https://angular.io/tutorial/)
 
 #### Overall Angular Workflow
-- App Module imports every component
-- HTML component file can call imported components using their CSS element selector
-- TypeScript component file calls service functions for data and lifecycle methods are here
+- App module imports component (declarations) and modules (eg: routing)
+- HTML component file calls imported components using their CSS element selector
+- TypeScript component file calls service functions for data and updates UI using lifecycle methods
 - Service retrieves data asynchronously using Observer library RxJS - updates are done through publish/subscribe design pattern
 
 ## Notes
-- Angular CLI to generate component, services
-- Generate heroes component and use in app.component.html
-- Generate hero-detail component and use in heroes.component.html
-- Annotate class with decorator that specifies Angular metadata - eg: @Component
+- Use Angular CLI to generate everything (component, services, modules, etc.)
+- You can use any imported component from app.module.ts in any HTML files (heroes.component.html can use hero-detail.component.html)
+- Angular annotations add Angular metadata for lifecycle - eg: @Component, @Input - The input property is bound to a DOM property in the template. During change detection, Angular automatically updates the data property with the DOM property's value.
 - Angular event binding syntax - ```<button type="button" (click)="onSelect(hero)"``` and ```<input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">```
 - Angular conditional rendering - ```<div *ngIf="selectedHero">```
-- Annotate data member with decorator - eg: @Input - The input property is bound to a DOM property in the template. During change detection, Angular automatically updates the data property with the DOM property's value.
-- Service handles retrieval of data and passes to component
+- Use this HTTP Interceptor for local development [https://angular.io/tutorial/toh-pt6](https://angular.io/tutorial/toh-pt6) - ```npm install angular-in-memory-web-api --save```
+- AsyncPipe enables you to subscribe to Observable inside HTML - ```<li *ngFor="let hero of heroes$ | async" >```
+- CRUD functions (GET/POST/PUT/DELETE) inside hero.service.ts
 
 ## Angular Tour of Heroes
 1. The Hero Editor
@@ -59,6 +59,14 @@ View tutorial here: [https://angular.io/tutorial/](https://angular.io/tutorial/)
 - You refactored a tightly-coupled master/detail view into a routed detail view
 - You used router link parameters to navigate to the detail view of a user-selected hero
 - You shared the HeroService among multiple components
+
+6. Get Data from a Server
+- You added the necessary dependencies to use HTTP in the app
+- You refactored HeroService to load heroes from a web API
+- You extended HeroService to support post(), put(), and delete() methods
+- You updated the components to allow adding, editing, and deleting of heroes
+- You configured an in-memory web API
+- You learned how to use observables
 
 ## Angular CLI README
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
