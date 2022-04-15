@@ -17,6 +17,11 @@ View tutorial here: [https://angular.io/tutorial/](https://angular.io/tutorial/)
 - AsyncPipe enables you to subscribe to Observable inside HTML - ```<li *ngFor="let hero of heroes$ | async" >```
 - CRUD functions (GET/POST/PUT/DELETE) inside hero.service.ts
 
+#### Deploy to Netlify
+- Fix deploy settings [https://www.netlify.com/blog/2019/09/23/first-steps-using-netlify-and-angular/](https://www.netlify.com/blog/2019/09/23/first-steps-using-netlify-and-angular/)
+  - Build command: ```ng build --prod```
+  - Publish directory: ```dist/{project name}```
+
 ## Angular Tour of Heroes
 1. The Hero Editor
 - You used the CLI to create a second HeroesComponent
